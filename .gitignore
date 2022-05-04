@@ -12,6 +12,7 @@
 
 /token.json
 /credentials.json
+/.idea
 
 ###> symfony/phpunit-bridge ###
 .phpunit.result.cache
