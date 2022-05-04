@@ -94,9 +94,7 @@ class ClientService
                 $accessToken = $this->client->fetchAccessTokenWithRefreshToken($this->client->getRefreshToken());
                 $this->writeTokenFile($accessToken);
             } else {
-                header('Status: 301 Moved Permanently', false, 301);
                 header('Location: '.$this->client->createAuthUrl());
-
                 exit();
             }
         }
