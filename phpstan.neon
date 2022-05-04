@@ -1,0 +1,26 @@
+includes:
+    - vendor/phpstan/phpstan/conf/bleedingEdge.neon
+    - vendor/slam/phpstan-extensions/conf/symfony-rules.neon
+    # Add https://github.com/phpstan/phpstan-strict-rules
+
+parameters:
+    checkGenericClassInNonGenericObjectType: false
+    checkMissingIterableValueType: false
+    checkExplicitMixed: false
+
+    doctrine:
+        objectManagerLoader: '%currentWorkingDirectory%/tests/object-manager.php'
+
+    level: max
+
+    excludePaths:
+        - 'tests/bootstrap.php'
+
+    paths:
+        - bin
+        - config
+        - public
+        - src
+
+    symfony:
+        container_xml_path: '%currentWorkingDirectory%/var/cache/test/App_KernelTestDebugContainer.xml'
